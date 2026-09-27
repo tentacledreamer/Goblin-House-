@@ -1,0 +1,99 @@
+[build]
+builder = "nixpacks"
+# Build tooling (esbuild, esbuild-plugin-pino, pino-pretty, thread-stream)
+# lives in artifacts/api-server's "dependencies", not "devDependencies",
+# specifically so Railway's prod-mode pnpm install picks them up. This
+# avoids all the --prod=false / purge-prompt / rm-rf workarounds that
+# previous fixes attempted: the build command can be a plain
+# frozen-lockfile install + node build.mjs.
+#
+# Tradeoff: ~5MB of build tooling ends up in the runtime image. esbuild
+# is never invoked at runtime; pino-pretty is only used as a transport
+# bundled by esbuild-plugin-pino. The clarity of having one install
+# command across dev and prod outweighs the size cost.
+#
+# Redeploy trigger 2026-05-22-T2: forcing fresh build after observed
+# behavior where /admin/qr-cards/print served the new bundle but
+# /admin/qr-cards (form page) served 404 — suggests stale runtime
+# state on Railway. No code change needed; just a fresh swap.
+# Minimal build chain. The previous version pre-built lib/db so that the
+# api-server typecheck could resolve composite-project .d.ts files. That
+# step required `tsc`, which lives in devDependencies — but Railway sets
+# NODE_ENV=production, so `pnpm install --frozen-lockfile` skips devDeps,
+# so `tsc` isn't on PATH, so the prebuild failed with "tsc: not found".
+#
+# Since the typecheck-gate is currently nuked to a 2-line exit(0) (see
+# scripts/typecheck-gate.mjs), we don't need composite-project .d.ts
+# files at all. esbuild bundles directly from the .ts source via
+# pnpm-workspace.yaml's exports field — no tsc, no dist, no .d.ts
+# needed. Remove the entire prebuild step and let the nuked gate run.
+#
+# The gate script's GATE_NUKE marker is our signal that the deploy is
+# using current source. When TTS is fully working, restore the gate
+# from commit 1281c56^ and move TypeScript to root dependencies so it's
+# available in production installs.
+buildCommand = "pnpm install --frozen-lockfile && cd artifacts/api-server && node scripts/typecheck-gate.mjs && node build.mjs"
+
+[deploy]
+startCommand = "node --enable-source-maps artifacts/api-server/dist/index.mjs"
+# Healthcheck on /livez, not / and not /healthz.
+#
+# Not /: the home page does substantial work (multiple DB queries, agent
+# stats, recent contradictions, PvF hero) and any single failure cascades
+# to a 500 — which then takes down deploys even when the rest of the app
+# is fine.
+#
+# Not /healthz either: that endpoint grew into a rich operator dashboard
+# that runs ~10 DB aggregations + a dozen module-state imports and takes
+# 15-22s warm. On a cold-booting container it can exceed the 120s window
+# and fail an otherwise-green deploy intermittently (observed 2026-06-04:
+# dc65194 and fc99d08 both failed the /healthz check on a clean build).
+#
+# /livez is the dedicated deploy gate: process-up + a trivial SELECT 1 DB
+# ping, sub-50ms. The heavy /healthz stays for humans; continuous deep
+# health lives on /api/health/liveness.
+healthcheckPath = "/livez"
+healthcheckTimeout = 120
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 5
+
+# ─── Web/Worker role split ───────────────────────────────────────────
+#
+# DEFAULT (no operator action required):
+#   WORKER_ROLE unset → "both" mode → single service serves HTTP AND
+#   runs the agent loop + scheduler + pollers. Identical to behaviour
+#   before this commit.
+#
+# Migrating from single-service to web+worker split (opt-in):
+#
+#   1. Spin up a NEW Railway service (duplicate of this one) with:
+#        WORKER_ROLE=worker
+#        DATABASE_URL=<same as the existing service>
+#        (all other env vars identical: LLM API keys, etc.)
+#      This service will run the background work. Both services point
+#      at the same Postgres. Agent loop now runs in TWO places
+#      temporarily.
+#
+#   2. Verify the worker is healthy:
+#      Check /healthz on the worker service shows:
+#        _debug.workerRole === "worker"
+#        _debug.runsBackgroundJobs === true
+#        _debug.recentlyCompleted shows jobs processing
+#
+#   3. Once confirmed, set on the ORIGINAL service:
+#        WORKER_ROLE=web
+#      Now the original serves HTTP only; the new worker handles
+#      background jobs. Agent loop runs in ONE place (the worker)
+#      instead of competing for the same DB locks.
+#
+#   4. Verify on /healthz:
+#        - Web service: _debug.workerRole === "web",
+#          _debug.runsBackgroundJobs === false
+#        - Worker service: _debug.workerRole === "worker",
+#          _debug.runsBackgroundJobs === true
+#
+# Why split: a slow LLM call in the agent loop can't take down the
+# web tier; web requests get the full event-loop's attention; worker
+# can scale independently (different memory profile, different
+# concurrency settings); and a worker crash doesn't take down the
+# public site.

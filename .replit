@@ -1,0 +1,103 @@
+modules = ["nodejs-24", "python-3.11", "postgresql-16"]
+
+[[artifacts]]
+id = "artifacts/api-server"
+
+[[artifacts]]
+id = "artifacts/mockup-sandbox"
+
+[deployment]
+router = "application"
+deploymentTarget = "autoscale"
+
+[deployment.postBuild]
+args = ["pnpm", "store", "prune"]
+env = { "CI" = "true" }
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "test"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "check-finding-reads"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Local LLM (Ollama)"
+
+[[workflows.workflow]]
+name = "test"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "pnpm --filter @workspace/api-server test"
+
+[workflows.workflow.metadata]
+isValidation = true
+
+[[workflows.workflow]]
+name = "check-finding-reads"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "pnpm run check:finding-reads"
+
+[workflows.workflow.metadata]
+isValidation = true
+
+[[workflows.workflow]]
+name = "Local LLM (Ollama)"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bash scripts/start-ollama.sh"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[agent]
+stack = "PNPM_WORKSPACE"
+expertMode = true
+
+[postMerge]
+path = "scripts/post-merge.sh"
+timeoutMs = 20000
+
+[nix]
+channel = "stable-25_05"
+
+[userenv]
+
+[userenv.shared]
+CONGRESS_GOV_API_KEY = "DVXUc04gjbvV216nG0EVe03Xwuhe9spluU1flbTT"
+ADMIN_GATE_TOKEN = "GOODYshoki3535@"
+OLLAMA_MODELS = "/home/runner/workspace/.local/ollama-models"
+OLLAMA_NUM_PARALLEL = "1"
+OLLAMA_KEEP_ALIVE = "30m"
+
+[[ports]]
+localPort = 8080
+externalPort = 80
+
+[[ports]]
+localPort = 8081
+externalPort = 8081
+
+[[ports]]
+localPort = 18952
+externalPort = 18952
+
+[[artifacts]]
+id = "artifacts/seealiens"

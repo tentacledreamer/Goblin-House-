@@ -1,0 +1,6 @@
+# Railway builds with nixpacks (railway.toml). The auto-detected setup phase
+# is nodejs_20 + pnpm + openssl; "..." keeps that and adds the PostgreSQL
+# client so the nightly backup (artifacts/api-server/src/lib/db-backup.ts)
+# has a pg_dump to run. The server itself does not use it.
+[phases.setup]
+nixPkgs = ["...", "postgresql_16"]

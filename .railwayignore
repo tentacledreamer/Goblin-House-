@@ -1,0 +1,12 @@
+# What `railway up` must not upload. Railway reads .gitignore, but not
+# .git/info/exclude, so the session worktrees and local state are listed here.
+.git/
+.claude/
+.local/
+archive/
+artifacts/api-server/.local/
+artifacts/api-server/dist/
+artifacts/goblin-brain/release/
+**/node_modules/
+# Exports of the database (facts, syntheses, sources); nothing reads them at build or run time.
+artifacts/api-server/data/

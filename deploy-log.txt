@@ -1,0 +1,155 @@
+================= GOBLIN HOUSE DEPLOY =================
+
+--- where am I ---
+C:\Goblin House\Investigative-Nexus
+
+--- remote ---
+gitsafe-backup	git://gitsafe:5418/backup.git (fetch)
+gitsafe-backup	git://gitsafe:5418/backup.git (push)
+origin	https://github.com/cricketmilk/Investigative-Nexus.git (fetch)
+origin	https://github.com/cricketmilk/Investigative-Nexus.git (push)
+subrepl-0jnleyn1	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-0jnleyn1	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-19w0j4pm	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-19w0j4pm	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-4mc3p1s8	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-4mc3p1s8	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-6ff05cjt	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-6ff05cjt	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-6lve60wn	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-6lve60wn	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-7x3iasb8	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-7x3iasb8	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-84ccr47o	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-84ccr47o	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-asxe3f5e	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-asxe3f5e	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-biq94leh	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-biq94leh	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-czc30kl9	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-czc30kl9	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-d6faqpym	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-d6faqpym	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-e077ckv8	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-e077ckv8	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-ecdbkheh	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-ecdbkheh	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-f8oic6ng	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-f8oic6ng	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-fnu47gow	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-fnu47gow	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-gs2lfcyg	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-gs2lfcyg	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-i5b7uhmc	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-i5b7uhmc	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-ior6c2nr	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-ior6c2nr	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-j528ifuj	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-j528ifuj	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-k3la4n3b	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-k3la4n3b	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-knp0v8ci	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-knp0v8ci	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-lfvgfuxa	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-lfvgfuxa	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-mg4nms2z	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-mg4nms2z	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-n11ml1k1	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-n11ml1k1	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-nez8ompf	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-nez8ompf	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-nqitxr1c	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-nqitxr1c	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-o1iuwlwq	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-o1iuwlwq	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-oezada63	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-oezada63	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-oj1u60an	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-oj1u60an	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-oo0mleyr	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-oo0mleyr	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-oqbmiwbt	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-oqbmiwbt	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-p5abatmz	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-p5abatmz	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-q38ggz7x	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-q38ggz7x	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-qkufvdlg	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-qkufvdlg	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-r3t9y7ry	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-r3t9y7ry	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-ropb1sik	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-ropb1sik	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-s891ie9x	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-s891ie9x	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-snybdkhu	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-snybdkhu	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-svmlh5z8	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-svmlh5z8	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-syynh0ml	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-syynh0ml	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-tagzbura	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-tagzbura	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-tf11km0h	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-tf11km0h	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-tptqvdfp	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-tptqvdfp	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-ttkz3n7o	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-ttkz3n7o	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-tzodn451	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-tzodn451	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-uhoc8ljp	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-uhoc8ljp	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-uv6lmsyq	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-uv6lmsyq	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-uyi7bhtd	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-uyi7bhtd	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-vfla0vf2	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-vfla0vf2	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-wc02hm7p	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-wc02hm7p	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-wrxx673y	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-wrxx673y	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-xcg8330x	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-xcg8330x	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-xcrngbdy	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-xcrngbdy	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-ygi1voku	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-ygi1voku	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-yupp2zg3	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-yupp2zg3	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+subrepl-zqkg5lp5	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (fetch)
+subrepl-zqkg5lp5	git+ssh://git@ssh.janeway.replit.dev:/home/runner/workspace (push)
+
+--- branch / tracking ---
+## main...origin/main
+ M deploy-log.txt
+
+--- does admin-vtubers.ts exist? ---
+admin-vtubers.ts
+
+--- staging everything ---
+
+--- what is staged ---
+M	deploy-log.txt
+
+--- committing ---
+[main 9ca00e5] Fix build: add admin-vtubers stub; Crinkle plate; verify route; nav + everything
+ 1 file changed, 124 deletions(-)
+
+--- pushing ---
+To https://github.com/cricketmilk/Investigative-Nexus.git
+   ca8231d..9ca00e5  main -> main
+
+--- last 5 commits ---
+9ca00e5 Fix build: add admin-vtubers stub; Crinkle plate; verify route; nav + everything
+ca8231d Fix build: add admin-vtubers stub; Crinkle plate; verify route; nav + everything
+bc56b70 Fix build: add admin-vtubers stub; Crinkle plate; verify route; nav + everything
+d1c6070 Fix build: add admin-vtubers stub; Crinkle plate; verify route; nav + everything
+cc37eee Fix build: add admin-vtubers stub; Crinkle plate; verify route; nav + everything
+
+--- final status ---
+## main...origin/main
+ M deploy-log.txt
+
+================= END =================
